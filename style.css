@@ -1,0 +1,70 @@
+:root {
+    --primary-red: rgb(162, 50, 18);
+}
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-red);
+}
+.container {
+    width: 300px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+
+}
+.sortable-list {
+    width: 95%;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+    border: 1px solid #aaa;
+    cursor: grab;
+    border-radius: 5px;
+    border-left: 2px solid var(--primary-red);
+    background: white;
+
+}
+.item:hover {
+    background: linear-gradient(to right,white ,rgba(162, 50, 18, 0.1),white);
+}
+.item-detail {
+    display: flex;
+    align-items: center;
+    max-width: 230px;
+}
+.item-name {
+    font-size: 16px;
+    margin-left: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.item-pic {
+    height: 40px;
+    width: 40px; 
+    border-radius: 50%;
+}
+
+.dragged :where(.item-detail, i){
+    opacity: 0;
+}
